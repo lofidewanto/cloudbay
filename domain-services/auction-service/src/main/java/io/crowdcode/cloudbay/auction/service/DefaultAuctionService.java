@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @Transactional
-@Profile({"!expired & !readwrite & !memory"})
+@Profile("default")
 public class DefaultAuctionService implements AuctionService {
 
     protected Map<String, Auction> activeAuctions = new HashMap<>();
@@ -94,9 +94,7 @@ public class DefaultAuctionService implements AuctionService {
 
     protected boolean matchesSearch(String value, String searchTerm) {
         if (value != null && value.trim().length() > 0) {
-            if (value.trim().toUpperCase().contains(searchTerm.toUpperCase().trim())) {
-                return true;
-            }
+            return value.trim().toUpperCase().contains(searchTerm.toUpperCase().trim());
         }
         return false;
     }

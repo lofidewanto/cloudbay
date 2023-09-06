@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.crowdcode.cloudbay</groupId>
         <artifactId>service-parent</artifactId>
-        <version>2.4.5-SNAPSHOT</version>
+        <version>3.0.0-SNAPSHOT</version>
         <relativePath>../../commons/service-parent</relativePath>
     </parent>
 
@@ -18,9 +18,9 @@
     <description>secure-gateway</description>
 
     <properties>
-        <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <spring-cloud.version>2022.0.2</spring-cloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <outputFolder>${project.build.directory}/${project.artifactId}</outputFolder>
     </properties>
 
@@ -66,6 +66,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
     </dependencies>
